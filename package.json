@@ -39,7 +39,11 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {
-    "quotes": ["off", "single"]}
+    "quotes": ["off", "single"],
+    "space-before-function-paren": "off",
+    "comma-dangle": "off",
+    "semi": "off"
+}
   },
   "browserslist": [
     "> 1%",

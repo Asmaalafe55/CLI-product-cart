@@ -51,24 +51,24 @@
 
 <script>
 export default {
-  props: ['toggle', 'cart', 'inventory', 'remove'],
+  props: ["toggle", "cart", "inventory", "remove"],
   methods: {
-    getPrice (name) {
+    getPrice(name) {
       const product = this.inventory.find((p) => {
-        return p.name === name
-      })
-      return product.price.USD
+        return p.name === name;
+      });
+      return product.price.USD;
     },
-    calculateTotal () {
+    calculateTotal() {
       const total = Object.entries(this.cart).reduce(
         //  curr - [key, value]
         (acc, curr) => {
-          return acc + curr[1] * this.getPrice(curr[0])
+          return acc + curr[1] * this.getPrice(curr[0]);
         },
         0
-      )
-      return total.toFixed(2)
-    }
-  }
-}
+      );
+      return total.toFixed(2);
+    },
+  },
+};
 </script>

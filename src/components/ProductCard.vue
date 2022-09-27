@@ -36,11 +36,11 @@
 
 <script>
 export default {
-  props: ['product', 'addToCart'],
-  data () {
+  props: ["product", "addToCart"],
+  data() {
     return {
-      quantity: 0
-    }
-  }
-}
+      quantity: 0,
+    };
+  },
+};
 </script>
