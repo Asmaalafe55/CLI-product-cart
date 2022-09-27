@@ -1,7 +1,5 @@
-export default [
-  {
-    rules: {
-      semi: "off",
-    },
+export default {
+  rules: {
+    semi: "off",
   },
-];
+};

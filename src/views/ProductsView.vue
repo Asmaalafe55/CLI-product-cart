@@ -3,10 +3,9 @@
     <h1>Products</h1>
 
     <div class="card-container">
-      <ProductCart
+      <ProductCard
           v-for="product in inventory"
           :key="product.id"
-          class="card"
           :product="product"
           :addToCart="addToCart"
         />
@@ -16,11 +15,11 @@
 </template>
 
 <script>
-import ProductCart from '@/components/ProductCart.vue'
+import ProductCard from '@/components/ProductCard.vue'
 export default {
   props: ['inventory', 'addToCart'],
   components: {
-    ProductCart
+    ProductCard
   }
 }
 </script>

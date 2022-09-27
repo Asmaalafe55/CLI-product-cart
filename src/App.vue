@@ -17,7 +17,7 @@
       <span>Cart ({{ totalQuantity }})</span>
     </div>
   </header>
-  <router-view :inventory="inventory" :addToCart="addToCart"/>
+  <router-view :inventory="inventory" :addToCart="addToCart" />
   <Sidebar
     v-if="showSidebar"
     :toggle="toggleSidebar"
@@ -28,38 +28,38 @@
 </template>
 
 <script>
-import Sidebar from './components/Sidebar.vue'
-import food from './food.json'
+import Sidebar from "./components/Sidebar.vue";
+import food from "./food.json";
 export default {
   components: {
-    Sidebar
+    Sidebar,
   },
-  data () {
+  data() {
     return {
       showSidebar: false,
       inventory: food,
-      cart: {}
-    }
+      cart: {},
+    };
   },
   computed: {
-    totalQuantity () {
+    totalQuantity() {
       return Object.values(this.cart).reduce((acc, curr) => {
-        return acc + curr
-      }, 0)
-    }
+        return acc + curr;
+      }, 0);
+    },
   },
   methods: {
-    addToCart (name, quantity) {
-      if (!this.cart[name]) this.cart[name] = 0
+    addToCart(name, quantity) {
+      if (!this.cart[name]) this.cart[name] = 0;
       //  receive name and number
-      this.cart[name] += quantity
+      this.cart[name] += quantity;
     },
-    toggleSidebar () {
-      this.showSidebar = !this.showSidebar
+    toggleSidebar() {
+      this.showSidebar = !this.showSidebar;
     },
-    removeItem (name) {
-      delete this.cart[name]
-    }
-  }
-}
+    removeItem(name) {
+      delete this.cart[name];
+    },
+  },
+};
 </script>

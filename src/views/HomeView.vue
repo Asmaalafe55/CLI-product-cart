@@ -9,10 +9,9 @@
     <main class="wrapper">
       <h2>Recommended</h2>
       <div class="recommended">
-        <ProductCart
+        <ProductCard
           v-for="product in inventory.slice(0,3)"
           :key="product.id"
-          class="card"
           :product="product"
           :addToCart="addToCart"
         />
@@ -22,13 +21,13 @@
 </template>
 
 <script>
-import ProductCart from '@/components/ProductCart.vue'
+import ProductCard from '@/components/ProductCard.vue'
 
 export default {
   name: 'HomeView',
   props: ['inventory', 'addToCart'],
   components: {
-    ProductCart
+    ProductCard
   }
 }
 </script>
