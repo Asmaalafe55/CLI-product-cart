@@ -23,7 +23,12 @@
           </thead>
           <tbody>
             <tr v-for="(quantity, key, i) in cart" :key="i">
-              <td><i class="icofont-carrot icofont-3x"></i></td>
+              <td>
+                <i
+                  class="icofont-3x"
+                  :class="'icofont-' + getProduct(key).icon"
+                ></i>
+              </td>
               <td>{{ key }}</td>
               <td>${{ getPrice(key) }}</td>
               <td class="center">{{ quantity }}</td>
@@ -51,24 +56,24 @@
 
 <script>
 export default {
-  props: ["toggle", "cart", "inventory", "remove"],
+  name: 'SideBar',
+  props: ['toggle', 'cart', 'inventory', 'remove'],
   methods: {
+    getProduct(name) {
+      return this.inventory.find((p) => p.name === name) || { icon: '', price: { USD: 0 } }
+    },
     getPrice(name) {
-      const product = this.inventory.find((p) => {
-        return p.name === name;
-      });
-      return product.price.USD;
+      return this.getProduct(name).price.USD
     },
     calculateTotal() {
       const total = Object.entries(this.cart).reduce(
-        //  curr - [key, value]
         (acc, curr) => {
-          return acc + curr[1] * this.getPrice(curr[0]);
+          return acc + curr[1] * this.getPrice(curr[0])
         },
         0
-      );
-      return total.toFixed(2);
+      )
+      return total.toFixed(2)
     },
   },
-};
+}
 </script>
