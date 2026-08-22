@@ -32,6 +32,7 @@
 import SideBar from "./components/SideBar.vue";
 import food from "./food.json";
 export default {
+  name: 'App',
   components: {
     SideBar,
   },
@@ -51,9 +52,10 @@ export default {
   },
   methods: {
     addToCart(name, quantity) {
+      const amount = Number(quantity);
+      if (!amount || amount < 1) return;
       if (!this.cart[name]) this.cart[name] = 0;
-      //  receive name and number
-      this.cart[name] += quantity;
+      this.cart[name] += amount;
     },
     toggleSidebar() {
       this.showSidebar = !this.showSidebar;
