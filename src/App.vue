@@ -1,68 +1,23 @@
 <template>
-  <header class="top-bar spread">
-    <nav class="top-bar-nav">
-      <router-link to="/" class="top-bar-link">
-        <i class="icofont-spoon-and-fork"></i>
-        <span>Home</span>
-      </router-link>
-      <router-link to="/products" class="top-bar-link">
-        <span>Products</span>
-      </router-link>
-      <router-link to="/past-orders" class="top-bar-link">
-        <span>Past Orders</span>
-      </router-link>
-    </nav>
-    <div @click="toggleSidebar" class="top-bar-cart-link">
-      <i class="icofont-cart-alt icofont-1x"></i>
-      <span>Cart ({{ totalQuantity }})</span>
-    </div>
-  </header>
-  <router-view :inventory="inventory" :addToCart="addToCart" />
-
-  <SideBar
-    v-if="showSidebar"
-    :toggle="toggleSidebar"
-    :cart="cart"
-    :inventory="inventory"
-    :remove="removeItem"
-  />
+  <div class="app-root">
+    <AppHeader />
+    <main class="page">
+      <router-view />
+    </main>
+    <AppFooter />
+    <CartDrawer />
+    <ToastStack />
+  </div>
 </template>
 
 <script>
-import SideBar from "./components/SideBar.vue";
-import food from "./food.json";
+import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
+import CartDrawer from './components/CartDrawer.vue'
+import ToastStack from './components/ToastStack.vue'
+
 export default {
-  name: 'App',
-  components: {
-    SideBar,
-  },
-  data() {
-    return {
-      showSidebar: false,
-      inventory: food,
-      cart: {},
-    };
-  },
-  computed: {
-    totalQuantity() {
-      return Object.values(this.cart).reduce((acc, curr) => {
-        return acc + curr;
-      }, 0);
-    },
-  },
-  methods: {
-    addToCart(name, quantity) {
-      const amount = Number(quantity);
-      if (!amount || amount < 1) return;
-      if (!this.cart[name]) this.cart[name] = 0;
-      this.cart[name] += amount;
-    },
-    toggleSidebar() {
-      this.showSidebar = !this.showSidebar;
-    },
-    removeItem(name) {
-      delete this.cart[name];
-    },
-  },
-};
+  name: 'AppRoot',
+  components: { AppHeader, AppFooter, CartDrawer, ToastStack }
+}
 </script>
