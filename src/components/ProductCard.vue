@@ -66,7 +66,9 @@ export default {
     }
 
     function onImgError(e) {
-      e.target.src = `https://picsum.photos/seed/${props.product.slug}/800/600`
+      // keep layout even if an asset is missing
+      e.target.src = `${process.env.BASE_URL}img/products/${props.product.slug}.jpg`
+      e.target.onerror = null
     }
 
     return {

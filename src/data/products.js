@@ -1,3 +1,5 @@
+const productImage = (slug) => `${process.env.BASE_URL}img/products/${slug}.jpg`
+
 export const products = [
   {
     id: 1,
@@ -8,7 +10,7 @@ export const products = [
     stock: 48,
     rating: 4.6,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=800&q=80',
+    image: productImage('radishes'),
     name: { en: 'Radishes', he: 'צנוניות', ar: 'فجل' },
     description: {
       en: 'Crisp bunches with a peppery bite — perfect for salads.',
@@ -25,7 +27,7 @@ export const products = [
     stock: 22,
     rating: 4.8,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1601493700631-88475873e891?auto=format&fit=crop&w=800&q=80',
+    image: productImage('artichokes'),
     name: { en: 'Artichokes', he: 'ארטישוק', ar: 'خرشوف' },
     description: {
       en: 'Tender hearts ready for roasting or dipping.',
@@ -42,7 +44,7 @@ export const products = [
     stock: 35,
     rating: 4.4,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=800&q=80',
+    image: productImage('broccoli'),
     name: { en: 'Broccoli', he: 'ברוקולי', ar: 'بروكلي' },
     description: {
       en: 'Deep green florets packed with freshness.',
@@ -59,7 +61,7 @@ export const products = [
     stock: 60,
     rating: 4.2,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&w=800&q=80',
+    image: productImage('cabbages'),
     name: { en: 'Cabbages', he: 'כרוב', ar: 'ملفوف' },
     description: {
       en: 'Sweet crunch for slaws and slow braises.',
@@ -76,7 +78,7 @@ export const products = [
     stock: 40,
     rating: 4.9,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1528821128474-27f963b062bf?auto=format&fit=crop&w=800&q=80',
+    image: productImage('cherries'),
     name: { en: 'Cherries', he: 'דובדבנים', ar: 'كرز' },
     description: {
       en: 'Ruby-sweet and juicy — snack straight from the bowl.',
@@ -93,7 +95,7 @@ export const products = [
     stock: 55,
     rating: 4.5,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=800&q=80',
+    image: productImage('carrots'),
     name: { en: 'Carrots', he: 'גזר', ar: 'جزر' },
     description: {
       en: 'Earthy sweetness for roasting and juicing.',
@@ -110,7 +112,7 @@ export const products = [
     stock: 28,
     rating: 4.7,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80',
+    image: productImage('corn'),
     name: { en: 'Corn', he: 'תירס', ar: 'ذرة' },
     description: {
       en: 'Golden ears with buttery summer flavor.',
@@ -127,7 +129,7 @@ export const products = [
     stock: 33,
     rating: 4.6,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=800&q=80',
+    image: productImage('grapes'),
     name: { en: 'Grapes', he: 'ענבים', ar: 'عنب' },
     description: {
       en: 'Cool clusters for cheese boards and kids\' snacks.',
@@ -144,7 +146,7 @@ export const products = [
     stock: 70,
     rating: 4.1,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?auto=format&fit=crop&w=800&q=80',
+    image: productImage('onions'),
     name: { en: 'Onions', he: 'בצל', ar: 'بصل' },
     description: {
       en: 'Kitchen essential — caramelizes into pure comfort.',
@@ -161,7 +163,7 @@ export const products = [
     stock: 45,
     rating: 4.8,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=800&q=80',
+    image: productImage('oranges'),
     name: { en: 'Oranges', he: 'תפוזים', ar: 'برتقال' },
     description: {
       en: 'Bright citrus sunshine in every peel.',
@@ -178,7 +180,7 @@ export const products = [
     stock: 38,
     rating: 4.3,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1587735243615-c03f25aaff15?auto=format&fit=crop&w=800&q=80',
+    image: productImage('peas'),
     name: { en: 'Peas', he: 'אפונה', ar: 'بازلاء' },
     description: {
       en: 'Sweet little pearls for pasta and spring plates.',
@@ -195,7 +197,7 @@ export const products = [
     stock: 18,
     rating: 4.7,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1490885578174-ecda6e5f4d6a?auto=format&fit=crop&w=800&q=80',
+    image: productImage('pineapples'),
     name: { en: 'Pineapples', he: 'אננס', ar: 'أناناس' },
     description: {
       en: 'Tropical tang — grill it or juice it.',
@@ -212,7 +214,7 @@ export const products = [
     stock: 16,
     rating: 4.9,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=800&q=80',
+    image: productImage('steaks'),
     name: { en: 'Steaks', he: 'סטייקים', ar: 'شرائح لحم' },
     description: {
       en: 'Butcher-cut richness for weekend feasts.',
@@ -229,7 +231,7 @@ export const products = [
     stock: 12,
     rating: 4.8,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1587049352846-4a222e784422?auto=format&fit=crop&w=800&q=80',
+    image: productImage('watermelons'),
     name: { en: 'Watermelons', he: 'אבטיחים', ar: 'بطيخ' },
     description: {
       en: 'Hydrating summer icon — chill before slicing.',
@@ -246,7 +248,7 @@ export const products = [
     stock: 26,
     rating: 4.4,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80',
+    image: productImage('sausages'),
     name: { en: 'Sausages', he: 'נקניקיות', ar: 'نقانق' },
     description: {
       en: 'Savory links for grill nights and brunch.',
@@ -263,7 +265,7 @@ export const products = [
     stock: 30,
     rating: 4.9,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1523049673857-eb3fef66137e?auto=format&fit=crop&w=800&q=80',
+    image: productImage('avocado'),
     name: { en: 'Avocados', he: 'אבוקדו', ar: 'أفوكادو' },
     description: {
       en: 'Creamy green gold for toast and bowls.',
@@ -280,7 +282,7 @@ export const products = [
     stock: 42,
     rating: 4.9,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=800&q=80',
+    image: productImage('strawberries'),
     name: { en: 'Strawberries', he: 'תותים', ar: 'فراولة' },
     description: {
       en: 'Perfume-sweet berries for desserts and breakfast.',
@@ -297,7 +299,7 @@ export const products = [
     stock: 50,
     rating: 4.6,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=800&q=80',
+    image: productImage('tomatoes'),
     name: { en: 'Tomatoes', he: 'עגבניות', ar: 'طماطم' },
     description: {
       en: 'Sun-ripened for sauces, salads, and snacking.',
