@@ -330,7 +330,7 @@ export const messages = {
       en: 'EN',
       he: 'עב',
       ar: 'عر',
-      switcher: 'Language'
+      switcher: 'اللغة'
     },
     type: {
       vegetable: 'خضار',
